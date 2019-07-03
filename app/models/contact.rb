@@ -3,4 +3,8 @@ class Contact < ApplicationRecord
     updated_at.strftime("updated at %c")
   end
 
+  def full_name
+    "#{first_name} #{middle_name} #{last_name}"
+  end
+
 end
