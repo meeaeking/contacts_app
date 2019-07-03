@@ -30,4 +30,10 @@ class Api::ContactsController < ApplicationController
     @contact.save
     render 'show.json.jb'
   end
+
+  def destroy
+    @contact = Contact.find_by(id: params[:id])
+    @contact.destroy
+    render 'destory.json.jb'
+  end
 end
