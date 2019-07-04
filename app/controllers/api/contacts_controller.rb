@@ -13,8 +13,11 @@ class Api::ContactsController < ApplicationController
       email: params[:email],
       bio: params[:bio]
       )
-    @contact.save
-    render 'show.json.jb'
+    if @contact.save
+      render 'show.json.jb'
+    else
+      render 'errors.json.jb'
+    end
   end
 
   def show
