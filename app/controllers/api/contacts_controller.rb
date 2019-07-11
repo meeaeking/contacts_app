@@ -16,7 +16,7 @@ class Api::ContactsController < ApplicationController
     if @contact.save
       render 'show.json.jb'
     else
-      render 'errors.json.jb'
+      render 'errors.json.jb', status: :unprocessible_entity
     end
   end
 
@@ -34,8 +34,11 @@ class Api::ContactsController < ApplicationController
     @contact.email = params[:email]
     @contact.middle_name = params[:middle_name]
     @contact.bio = params[:bio]
-    @contact.save
-    render 'show.json.jb'
+    if @contact.save
+      render 'show.json.jb'
+    else
+      render 'errors.json.jb', status: :unprocessible_entity
+    end
   end
 
   def destroy
