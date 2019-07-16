@@ -5,6 +5,7 @@
   phone_number: contact.phone_number,
   email: contact.email,
   bio: contact.bio,
-  full_name: contact.full_name
+  full_name: contact.full_name,
+  groups: contact.groups
 
 }
