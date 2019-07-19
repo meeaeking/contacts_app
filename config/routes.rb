@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   end
 
     get "/contacts" => "contacts#index"
+    get "/contacts/:id" => "contacts#show"
+
 
 end
